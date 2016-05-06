@@ -10,9 +10,9 @@ class CommentsController < ApplicationController
     end
 
     if @comment.save
-      render json: { comment: @comment, location: comment_url(@comment)}, status: :created
+      render json: { comment: @comment, location: comment_url(@comment), notice: 'Comment was successfully created.' }
     else
-      render json: {errors: @comment.errors}, status: :unproccessable_entity
+      render json: {errors: @comment.errors, notice: 'Try again' }
     end
   end
 
@@ -20,9 +20,9 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.find(params[:id])
     @comment_id = params[:id]
     if @comment.destroy
-      render json: {comment: nil}, status: :accepted
+      render json: {comment: nil, notice: 'Comment was successfully deleted.' }
     else
-      render json: {errors: @comment.errors}, status: :unproccessable_entity
+      render json: {errors: @comment.errors, notice: 'Try again' }
   end
 
   private
