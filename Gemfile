@@ -4,6 +4,7 @@ gem "react_on_rails", "~> 5"
 
 gem 'devise'
 gem 'carrierwave'
+gem 'acts_as_commentable'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
