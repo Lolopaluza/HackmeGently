@@ -31,3 +31,4 @@ class CommentsController < ApplicationController
     @commentable = @commentable_type.constantize.find(params[:commentable_id])
   end
 end
+end
