@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+
+gem "react_on_rails", "~> 5"
+
 gem 'devise'
 gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
