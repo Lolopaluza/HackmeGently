@@ -3,6 +3,7 @@ import _ from 'lodash';
 import {Link} from 'react-router';
 import Colors from 'material-ui/lib/styles/colors';
 
+
 // Simple example of a React "smart" component
 const postsList = {
   backgroungColor: Colors.blue400,
@@ -38,11 +39,12 @@ export default class Home extends React.Component {
   }
 
   render() {
+    const component = this;
     return (
       <div style={postsList}>
         {this.state.posts.map(post =>
           <p style={listItem}>
-            <Link to={"/posts/${post.id}"}>{post.content}</Link>
+            <Link to={`/ui/posts/${post.id}`}>{post.content}</Link>)}
           </p>)}
       </div>
     );
