@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 import _ from 'lodash';
 import {Link} from 'react-router';
 import Colors from 'material-ui/lib/styles/colors';
+import RaisedButton from 'material-ui/lib/raised-button';
+
 
 
 // Simple example of a React "smart" component
@@ -10,8 +12,17 @@ const postsList = {
 }
 
 const listItem = {
-  color: Colors.grey300,
+  fontSize: "16px",
+  lineHeight: "260%",
 }
+
+const buttonStyle = {
+ margin: 2,
+ verticalAlign: "middle",
+ float: "right"
+};
+
+
 
 export default class Home extends React.Component {
 
@@ -43,9 +54,10 @@ export default class Home extends React.Component {
     return (
       <div style={postsList}>
         {this.state.posts.map(post =>
-          <p style={listItem}>
-            <Link to={`/ui/posts/${post.id}`}>{post.content}</Link>)}
-          </p>)}
+          <div>
+            <Link to={`/ui/posts/${post.id}`} style={listItem}>{post.content}</Link>
+            <RaisedButton label="LOL" secondary={true} style={buttonStyle}/>
+          </div>)}
       </div>
     );
   }
