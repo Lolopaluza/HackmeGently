@@ -1,4 +1,4 @@
-User.delete
+User.delete_all
 
   User.create({ email:"billgates@microsoft.com", password:"abcd1234"})
   User.create({ email:"tesla@genius.com", password:"abcd1234"})
@@ -12,7 +12,7 @@ User.delete
   User.create({ email:"zuckerburg@fb.com", password:"abcd1234"})
 
 
-Post.delete
+Post.delete_all
 
   Post.create({ content: "Hey jobs, what are your thoughts on this blue box?", user_id:1})
   Post.create({ content: "Anyone here know about a devise to make my shit work?", user_id:2})
@@ -25,7 +25,7 @@ Post.delete
   Post.create({ content: "I'm a genius, let me tell you about it", user_id:10})
 
 
-Skill.delete
+Skill.delete_all
 
   Skill.create({ name: "C#"})
   Skill.create({ name: "C"})
@@ -39,16 +39,16 @@ Skill.delete
   Skill.create({ name: "CSS"})
   Skill.create({ name: "HTML"})
 
-Comment.delete
+Comment.delete_all
 
-  Comment.create({ text:"Hahahaha *flip table* and ruuuunnnn", post_id:1, user_id:5})
-  Comment.create({ text:"I'm working on it, in the meantime, you want somebody to work you? ;)", post_id:2, user_id:9})
-  Comment.create({ text:"Check out my latest model it's the bomb", post_id:3, user_id:1})
-  Comment.create({ text:"In the sence that it will blow up in your face, yes indeed", post_id:3, user_id:5})
-  Comment.create({ text:"Stfu", post_id:4, user_id:4})
-  Comment.create({ text:"You dont know what your talking about", post_id:5, user_id:10})
-  Comment.create({ text:"Well screw you too.", post_id:5, user_id:4})
-  Comment.create({ text:"If i had one ball i would still be more capable than you", post_id:6, user_id:3})
-  Comment.create({ text:"You need to use google", post_id:7, user_id:4})
-  Comment.create({ text:"Dont make a website, check out mine and be social instead!", post_id:8, user_id:10})
-  Comment.create({ text:"I'm a genius, dont see you winning any wars", post_id:9, user_id:3})
+  Comment.create({ text:"Hahahaha *flip table* and ruuuunnnn", post_id:1, user_id:5, commentable_id: 1})
+  Comment.create({ text:"I'm working on it, in the meantime, you want somebody to work you? ;)", post_id:2, user_id:9, commentable_id: 1})
+  Comment.create({ text:"Check out my latest model it's the bomb", post_id:3, user_id:1, commentable_id: 1})
+  Comment.create({ text:"In the sence that it will blow up in your face, yes indeed", post_id:3, user_id:5, commentable_id: 1})
+  Comment.create({ text:"Stfu", post_id:4, user_id:4, commentable_id: 1})
+  Comment.create({ text:"You dont know what your talking about", post_id:5, user_id:10, commentable_id: 1})
+  Comment.create({ text:"Well screw you too.", post_id:5, user_id:4, commentable_id: 1})
+  Comment.create({ text:"If i had one ball i would still be more capable than you", post_id:6, user_id:3, commentable_id: 1})
+  Comment.create({ text:"You need to use google", post_id:7, user_id:4, commentable_id: 1})
+  Comment.create({ text:"Dont make a website, check out mine and be social instead!", post_id:8, user_id:10, commentable_id: 1})
+  Comment.create({ text:"I'm a genius, dont see you winning any wars", post_id:9, user_id:3, commentable_id: 1})

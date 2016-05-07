@@ -1,39 +1,39 @@
 import React, { PropTypes } from 'react';
 import _ from 'lodash';
-import {Link} from 'react-router';
+import Comments from './Comments';
 
 
 // Simple example of a React "smart" component
-export default class Home extends React.Component {
+export default class Post extends React.Component {
 
   constructor(props, context) {
     super(props, context);
 
-    this.state = { posts: [] };
+    this.state = { post: {} };
 
-    _.bindAll(this, 'getPosts')
+    _.bindAll(this, 'getPost')
   }
 
   componentDidMount() {
-    this.getPosts()
+    this.getPost()
   }
 
-  getPosts() {
+  getPost() {
     let component = this;
-    let url = "/posts.json";
+    let url = `/posts/${this.props.params.postId}`;
     jQuery.getJSON(url, function(data) {
       console.log(data)
       component.setState({
-        posts: data.posts
+        post: data.post
       });
     });
   }
 
   render() {
-    const component = this;
     return (
       <div>
-        {this.state.posts.map(post => <Link to={`/ui/posts/${post.id}`}><div>{post.content}</div></Link>)}
+        {this.state.post.content}
+        <Comments postId={this.props.params.postId} />
       </div>
     );
   }

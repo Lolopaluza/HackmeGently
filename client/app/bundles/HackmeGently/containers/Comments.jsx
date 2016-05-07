@@ -20,7 +20,7 @@ export default class Comments extends React.Component {
 
   getComments() {
     let component = this;
-    let url = "/posts/${this.props.params.postId}/comments/{commentId}";
+    let url = `/posts/${this.props.postId}/comments/`;
     jQuery.getJSON(url, function(data) {
       console.log(data)
       component.setState({
