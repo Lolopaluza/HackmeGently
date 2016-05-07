@@ -2,6 +2,18 @@ class CommentsController < ApplicationController
   before_action :find_commentable, only: :create
   respond_to :js
 
+  def index
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments
+    render json: { post: @post, comments: @comments }
+  end
+
+  def show
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments
+    render json: { post: @post, comments: @comments }
+  end
+
   def create
     @comment = @commentable.comments.new do |comment|
       comment.comment = params[:comment_text]
