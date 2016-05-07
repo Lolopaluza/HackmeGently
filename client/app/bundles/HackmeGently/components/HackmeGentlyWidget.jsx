@@ -11,6 +11,8 @@ export default class HackmeGentlyWidget extends React.Component {
     // passing two properties: "data" and "actions".
     updateName: PropTypes.func.isRequired,
     name: PropTypes.string.isRequired,
+    getPosts: PropTypes.func.isRequired,
+    post: PropTypes.string.isRequired,
   };
 
   constructor(props, context) {
@@ -26,6 +28,8 @@ export default class HackmeGentlyWidget extends React.Component {
   handleChange(e) {
     const name = e.target.value;
     this.props.updateName(name);
+    const post = e.target.value;
+    this.props.getPosts(name);
   }
 
   render() {
@@ -46,6 +50,9 @@ export default class HackmeGentlyWidget extends React.Component {
             onChange={this.handleChange}
           />
         </form>
+        <h2>
+          {post}
+        </h2>
       </div>
     );
   }
