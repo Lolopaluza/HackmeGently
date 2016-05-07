@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   get "ui(/*all)", to: "hackmegently#index"
   devise_for :users
 
-  resources :posts
-  resources :comments
+  resources :posts do
+    resources :comments
+  end
 
   resources :users do
     resources :skills
