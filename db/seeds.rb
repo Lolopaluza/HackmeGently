@@ -1,4 +1,3 @@
-User.delete
 
   User.create({ email:"billgates@microsoft.com", password:"abcd1234"})
   User.create({ email:"tesla@genius.com", password:"abcd1234"})
@@ -12,8 +11,6 @@ User.delete
   User.create({ email:"zuckerburg@fb.com", password:"abcd1234"})
 
 
-Post.delete
-
   Post.create({ content: "Hey jobs, what are your thoughts on this blue box?", user_id:1})
   Post.create({ content: "Anyone here know about a devise to make my shit work?", user_id:2})
   Post.create({ content: "In need of faster cpu, the germans are coming :(", user_id:9})
@@ -24,8 +21,6 @@ Post.delete
   Post.create({ content: "How do i make websites shiny", user_id:7})
   Post.create({ content: "I'm a genius, let me tell you about it", user_id:10})
 
-
-Skill.delete
 
   Skill.create({ name: "C#"})
   Skill.create({ name: "C"})
@@ -39,7 +34,6 @@ Skill.delete
   Skill.create({ name: "CSS"})
   Skill.create({ name: "HTML"})
 
-Comment.delete
 
   Comment.create({ text:"Hahahaha *flip table* and ruuuunnnn", post_id:1, user_id:5})
   Comment.create({ text:"I'm working on it, in the meantime, you want somebody to work you? ;)", post_id:2, user_id:9})
