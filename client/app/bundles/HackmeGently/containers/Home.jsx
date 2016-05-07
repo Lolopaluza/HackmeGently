@@ -31,7 +31,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        {this.state.posts}
+        {this.state.posts.map(post => <div>{post.content}</div>)}
       </div>
     );
   }
