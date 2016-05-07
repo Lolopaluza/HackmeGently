@@ -1,6 +1,7 @@
 import React from 'react';
-import HackmeGently from '../containers/HackmeGently';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
 
 export default (props) => (
-  <HackmeGently {...props} />
+  <Router history={browserHistory} children={routes} {...props} />
 );

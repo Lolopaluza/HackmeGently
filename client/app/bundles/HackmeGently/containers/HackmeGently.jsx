@@ -6,6 +6,7 @@ import _ from 'lodash';
 export default class HackmeGently extends React.Component {
   static propTypes = {
     name: PropTypes.string.isRequired, // this is passed from the Rails view
+    posts: PropTypes.array.isRequired,
   };
 
   constructor(props, context) {
@@ -20,6 +21,18 @@ export default class HackmeGently extends React.Component {
     // the methods defined here would not refer to the component's class, not the component
     // instance itself.
     _.bindAll(this, 'updateName');
+    _.bindAll(this, 'getPosts')
+  }
+
+  getPosts() {
+    let component = this;
+    let url = "/posts.json";
+    jQuery.getJSON(url, function(data) {
+      console.log(data)
+      component.setState({
+        posts: data.posts
+      });
+    });
   }
 
   updateName(name) {
@@ -29,7 +42,7 @@ export default class HackmeGently extends React.Component {
   render() {
     return (
       <div>
-        <HackmeGentlyWidget name={this.state.name} updateName={this.updateName} />
+        {this.props.children}
       </div>
     );
   }

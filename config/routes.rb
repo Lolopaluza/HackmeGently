@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'hackmegently', to: 'hackmegently#index'
+  get "ui(/*all)", to: "hackmegently#index"
   devise_for :users
 
   resources :posts
