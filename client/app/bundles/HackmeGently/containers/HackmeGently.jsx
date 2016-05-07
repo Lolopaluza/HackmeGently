@@ -8,16 +8,33 @@ import Colors from 'material-ui/lib/styles/colors';
 
 import AppBarComponent from '../components/AppBarComponent';
 
+const mainStyle = {
+  fontFamily: "Helvetica",
+  margin: "25px",
+  fontSize: "16px"
+}
 
 // Simple example of a React "smart" component
 export default class HackmeGently extends React.Component {
+
+  getChildContext() {
+    return {
+      muiTheme: ThemeManager.getMuiTheme(Theme),
+    };
+  }
 
   render() {
     return (
       <div>
         <AppBarComponent />
-        {this.props.children}
+        <div style={mainStyle}>
+          {this.props.children}
+        </div>
       </div>
     );
   }
 }
+
+HackmeGently.childContextTypes = {
+  muiTheme: React.PropTypes.object
+};
