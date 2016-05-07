@@ -11,9 +11,10 @@ export default class HackmeGently extends React.Component {
   constructor(props, context) {
     super(props, context);
 
+    console.log(props);
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = { name: this.props.name };
+    this.state = { name: this.props.user.email };
 
     // Uses lodash to bind all methods to the context of the object instance, otherwise
     // the methods defined here would not refer to the component's class, not the component
