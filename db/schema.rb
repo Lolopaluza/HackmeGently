@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506103212) do
+ActiveRecord::Schema.define(version: 20160507084232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "stalker_requests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "stalker_id"
+    t.string   "status", default: "Pending"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "stalker_requests", ["stalker_id"], name: "index_stalker_requests_on_stalker_id"
+  add_index "stalker_requests", ["user_id"], name: "index_stalker_requests_on_user_id"
 
   create_table "comments", force: :cascade do |t|
     t.text     "text"
@@ -47,6 +58,14 @@ ActiveRecord::Schema.define(version: 20160506103212) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "stalkers_users", id: false, force: :cascade do |t|
+    t.integer "stalker_id", null: false
+    t.integer "user_id",    null: false
+  end
+
+  add_index "stalkers_users", ["stalker_id", "user_id"], name: "index_stalkers_users_on_stalker_id_and_user_id"
+  add_index "stalkers_users", ["user_id", "stalker_id"], name: "index_stalkers_users_on_user_id_and_stalker_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   default: "", null: false
