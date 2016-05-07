@@ -5,16 +5,22 @@ import AppBar from 'material-ui/lib/app-bar';
 import IconButton from 'material-ui/lib/icon-button';
 import FlatButton from 'material-ui/lib/flat-button';
 
+const iconStyle = {
+  fontFamily: "Material Icons",
+  fontSize: "48px",
+  color: "#FFFFFF",
+  verticalAlign: "bottom"
+}
 
 export default class AppBarComponent extends React.Component {
 
   render() {
     return(
       <AppBar
-        title="Hack me Gent-ley"
+        title="<Hack me Gent-ley />"
         titleStyle={{ textAlign: "center" }}
-        iconElementLeft={<i className="material-icons">copyright</i>}
-        iconElementRight={<FlatButton label="Button" />}
+        iconElementLeft={<i style={iconStyle} className="material-icons">code</i>}
+        iconElementRight={<FlatButton label="// A_bug" />}
       />
     );
   }
