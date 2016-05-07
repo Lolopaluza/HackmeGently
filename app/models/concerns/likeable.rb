@@ -1,5 +1,5 @@
 module Likeable
-  extend Activesupport::Concern
+  extend ActiveSupport::Concern
   included do
     has_many :likes, as: :likeable
   end

@@ -3,5 +3,5 @@ class Post < ActiveRecord::Base
   acts_as_commentable
 
   belongs_to :user
-  mount_uploader :attachment, AvatarUploader
+  mount_uploader :attachment, ImageUploader
 end
