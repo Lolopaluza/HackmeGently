@@ -13,7 +13,6 @@ User.delete_all
 
 
 Post.delete_all
-
   Post.create({ content: "Hey jobs, what are your thoughts on this blue box?", user_id:1})
   Post.create({ content: "Anyone here know about a devise to make my shit work?", user_id:2})
   Post.create({ content: "In need of faster cpu, the germans are coming :(", user_id:9})
@@ -26,7 +25,6 @@ Post.delete_all
 
 
 Skill.delete_all
-
   Skill.create({ name: "C#"})
   Skill.create({ name: "C"})
   Skill.create({ name: "Javascript"})
